@@ -89,15 +89,15 @@ root@raspberrypi:~/xmrig/build# ./xmrig --help
 You should get a similar screen like this:
 
 ```shell
+Usage: xmrig [OPTIONS]
+
 Network:
   -o, --url=URL                 URL of mining server
   -a, --algo=ALGO               mining algorithm https://xmrig.com/docs/algorithms
       --coin=COIN               specify coin instead of algorithm
-  .....
-  -V, --version                 output version information and exit
-  -h, --help                    display this help and exit
-      --dry-run                 test configuration and exit
-      --export-topology         export hwloc topology to a XML file and exit
+  -u, --user=USERNAME           username for mining server
+  -p, --pass=PASSWORD           password for mining server
+.....
 ```
 
 #  Start mining!
