@@ -10,7 +10,7 @@ We will use the repository main xmrig repository.
 Just to make sure you have an armv7 RPi you can run the following command in a shell prompt:
 
 ```shell
-$ uname -m
+root@raspberrypi:~# uname -m
 ```
 
 You should get a response like this:
@@ -115,6 +115,4 @@ root@raspberrypi:~/xmrig/build#  ./xmrig -c <config_filename>
 * https://github.com/xmrig/xmrig/issues/744
 * https://github.com/xmrig/xmrig/issues/1224
 * https://github.com/xmrig/xmrig/blob/master/src/config.json
-* You can find more details about the parameter 'march' and the AArch64-Options : https://gcc.gnu.org/onlinedocs/gcc-6.1.0/gcc/AArch64-Options.html
-
 * More details about the various architectures for RPi : https://en.wikipedia.org/wiki/Raspberry_Pi
