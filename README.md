@@ -51,7 +51,7 @@ root@raspberrypi:~#  apt-get install git build-essential cmake libuv1-dev libssl
 ```
 
 # Clone the GitHub repository of the software
-We will use the repository maintained by tpruvot:
+We will use the main repository :
 
 ```shell
 root@raspberrypi:~# git clone https://github.com/xmrig/xmrig.git
