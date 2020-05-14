@@ -1,0 +1,1 @@
+# build_xmrig_for_armv7
