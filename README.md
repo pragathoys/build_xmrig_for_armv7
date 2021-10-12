@@ -62,6 +62,7 @@ root@raspberrypi:~# unzip v5.11.4.zip
 ```shell
 root@raspberrypi:~# cd xmrig-5.11.4
 root@raspberrypi:~/xmrig-5.11.4# mkdir build
+root@raspberrypi:~/xmrig-5.11.4# cd build
 root@raspberrypi:~/xmrig-5.11.4/build# cmake .. -DARM_TARGET=7
 root@raspberrypi:~/xmrig-5.11.4/build# make
 ```
