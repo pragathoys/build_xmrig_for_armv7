@@ -3,7 +3,7 @@ In the following notes we assume that you want to build the cpuminer-multi softw
 
 Basically, ARMv7 and below are 32-bit while ARMv8 introduces the 64-bit instruction set. The latest version of Raspberry Pi 4 comes with an ARMv8 64-bit instruction set.
 
-We will use the repository main xmrig repository and specifically the version v5.11.4 .
+We will use the release v5.11.4 from the xmrig repository (but you can even compile v6.2.3).
 
 # Check your machine
 
