@@ -3,7 +3,7 @@ In the following notes we assume that you want to build the cpuminer-multi softw
 
 Basically, ARMv7 and below are 32-bit while ARMv8 introduces the 64-bit instruction set. The latest version of Raspberry Pi 4 comes with an ARMv8 64-bit instruction set.
 
-We will use the repository main xmrig repository and specifically the version 5.11.4 .
+We will use the repository main xmrig repository and specifically the version v5.11.4 .
 
 # Check your machine
 
@@ -95,21 +95,19 @@ root@raspberrypi:~/xmrig-5.11.4/build# make
 If everything gone well when you run the command :
 
 ```shell
-root@raspberrypi:~/xmrig-5.11.4/build# ./xmrig --help 
+root@raspberrypi:~/xmrig-5.11.4/build# ./xmrig --version 
 ```
 
 You should get a similar screen like this:
 
 ```shell
-Usage: xmrig [OPTIONS]
+XMRig 5.11.4
+ built on Oct 12 2021 with GCC 8.3.0
+ features:
 
-Network:
-  -o, --url=URL                 URL of mining server
-  -a, --algo=ALGO               mining algorithm https://xmrig.com/docs/algorithms
-      --coin=COIN               specify coin instead of algorithm
-  -u, --user=USERNAME           username for mining server
-  -p, --pass=PASSWORD           password for mining server
-.....
+libuv/1.24.1
+OpenSSL/1.1.1d
+hwloc/1
 ```
 
 #  Start mining!
@@ -123,6 +121,7 @@ root@raspberrypi:~/xmrig-5.11.4/build#  ./xmrig -c <config_filename>
 # Resources
 
 * Most usefull resource is the repository of the xmrig: https://github.com/xmrig/xmrig.git
+* Release v5.11.4: https://github.com/xmrig/xmrig/releases/tag/v5.11.4
 * Build instructions: https://github.com/xmrig/xmrig/wiki/Ubuntu-Build
 * https://github.com/xmrig/xmrig/issues/744
 * https://github.com/xmrig/xmrig/issues/1224
