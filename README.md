@@ -3,7 +3,7 @@ In the following notes we assume that you want to build the cpuminer-multi softw
 
 Basically, ARMv7 and below are 32-bit while ARMv8 introduces the 64-bit instruction set. The latest version of Raspberry Pi 4 comes with an ARMv8 64-bit instruction set.
 
-We will use the repository main xmrig repository.
+We will use the repository main xmrig repository and specifically the version 5.11.4 .
 
 # Check your machine
 
@@ -54,20 +54,31 @@ root@raspberrypi:~#  apt-get install git build-essential cmake libuv1-dev libssl
 We will use the main repository :
 
 ```shell
-root@raspberrypi:~# git clone https://github.com/xmrig/xmrig.git
+root@raspberrypi:~# wget https://github.com/xmrig/xmrig/archive/refs/tags/v5.11.4.zip
+root@raspberrypi:~# unzip v5.11.4.zip
 ```
 
 # Prepare and build
 ```shell
-root@raspberrypi:~# cd xmrig
-root@raspberrypi:~/xmrig# mkdir build
-root@raspberrypi:~/xmrig/build# cmake .. -DARM_TARGET=7
+root@raspberrypi:~# cd xmrig-5.11.4
+root@raspberrypi:~/xmrig-5.11.4# mkdir build
+root@raspberrypi:~/xmrig-5.11.4/build# cmake .. -DARM_TARGET=7
+root@raspberrypi:~/xmrig-5.11.4/build# make
 ```
 If you get any errors about
 ```shell
-undefined reference to `__atomic
+undefined reference to `__atomic...
 ```
 please add following line to the file CMakeLists.txt:
+open with an editor:
+```shell
+nano CMakeLists.txt
+```
+and under the line:
+```shell
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+```
+please add also this line:
 ```shell
 set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")
 ```
@@ -75,7 +86,7 @@ set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} -latomic")
 Rerun the cmake command and if no errors appear you are ready to go:
 
 ```shell
-root@raspberrypi:~/xmrig/build# make
+root@raspberrypi:~/xmrig-5.11.4/build# make
 ```
 
 # Check miner
@@ -83,7 +94,7 @@ root@raspberrypi:~/xmrig/build# make
 If everything gone well when you run the command :
 
 ```shell
-root@raspberrypi:~/xmrig/build# ./xmrig --help 
+root@raspberrypi:~/xmrig-5.11.4/build# ./xmrig --help 
 ```
 
 You should get a similar screen like this:
@@ -105,7 +116,7 @@ Network:
 You are ready to create the configuration file,use your favorite mining pool and start mining:
 
 ```shell
-root@raspberrypi:~/xmrig/build#  ./xmrig -c <config_filename>
+root@raspberrypi:~/xmrig-5.11.4/build#  ./xmrig -c <config_filename>
 ```
 
 # Resources
